@@ -39,7 +39,7 @@ caption, th {
 
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1{
     font-weight: normal;
     font-size: 100%;
     margin: 0;
@@ -78,6 +78,7 @@ p {
     font-size: 4em;
 }
 
+
 .intro p {
     width: 50%;
     margin: 0 auto;
@@ -89,56 +90,26 @@ p {
 }
 
 #menu {
-    /*float: right;*/
-    text-align: right;
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 40px;
-    z-index: 70;
-    width: 100%;
-    padding: 0;
-    margin: 0px 0px 0px 0px;
+
 }
 
-#menu li {
-    display: inline-block;
-    margin: 10px;
-    color: #000;
-    background: #fff;
-    background: rgba(255, 255, 255, 0.3);
-    -webkit-border-radius: 20px;
-    border-radius: 20px;
+/* navbar */
+.navbar-default{
+    background:transparent;
+    border: none;
+}
+.navbar-default .navbar-nav > .active{
+    background: transparent;
+    text-shadow: 1px 0px 1px white;
+
+}
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+    background: transparent;
+
 }
 
-#menu li.active {
-    background: #666;
-    background: rgba(0, 0, 0, 0.5);
-    color: #fff;
-}
-
-#menu li a {
-    text-decoration: none;
-    color: #000;
-}
-
-#menu li.active a:hover {
-    color: #000;
-}
-
-#menu li:hover {
-    background: rgba(255, 255, 255, 0.8);
-}
-
-#menu li a,
-#menu li.active a {
-    padding: 9px 18px;
-    display: block;
-}
-
-#menu li.active a {
-    color: #fff;
-}
 
 #myVideo {
     position: absolute;
@@ -219,6 +190,11 @@ p {
     url(imgs/silnik.jpg);
 }
 
+#logoimg{
+    width: 200px;
+    height:auto;
+}
+
 .slide p {
     font-size: 2em;
     width: 60%;
@@ -227,3 +203,38 @@ p {
 
 }
 
+.avatar {
+    width:300px;
+    height: 300px;
+    margin: 10px;
+    border: 10px solid rgba(255,255,255,0.5);
+    border-radius: 500px;
+    -webkit-border-radius: 500px;
+    -moz-border-radius: 500px;
+}
+
+.kontakt i{
+    color: white;
+}
+.kontakt h2{
+    color: white;
+    font-size: 3em;
+}
+
+.kontakt p{
+    font-size: 2em;
+}
+
+#row {
+    padding-top:30px;
+    padding-bottom:30px;
+    background-color: #63899d;
+}
+
+.icons{
+    margin-top: 20px;
+}
+
+.icons i{
+    margin: 20px;
+}
