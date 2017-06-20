@@ -39,7 +39,7 @@ caption, th {
 
 }
 
-h1{
+h1 {
     font-weight: normal;
     font-size: 100%;
     margin: 0;
@@ -78,7 +78,6 @@ p {
     font-size: 4em;
 }
 
-
 .intro p {
     width: 50%;
     margin: 0 auto;
@@ -90,26 +89,29 @@ p {
 }
 
 #menu {
-
+    margin:10px;
 }
 
 /* navbar */
-.navbar-default{
-    background:transparent;
+.navbar-default {
+    background: transparent;
     border: none;
 }
-.navbar-default .navbar-nav > .active{
-    background: transparent;
-    text-shadow: 1px 0px 1px white;
 
+.navbar-default .navbar-nav > li > a {
+    color: white;
+    font-size: 1.2em;
 }
+
 .navbar-default .navbar-nav > .active > a,
 .navbar-default .navbar-nav > .active > a:hover,
 .navbar-default .navbar-nav > .active > a:focus {
-    background: transparent;
-
+    color: white;
+    background:#fff;
+    background: rgba(255,255,255, 0.2);
+    -webkit-border-radius: 55px;
+    border-radius: 55px;
 }
-
 
 #myVideo {
     position: absolute;
@@ -172,7 +174,6 @@ p {
     url(imgs/uklad.jpg);
 }
 
-
 #onas3 {
     background-image: linear-gradient(
             rgba(0, 0, 0, 0.5),
@@ -180,7 +181,6 @@ p {
     ),
     url(imgs/oczyszczalnia.jpg);
 }
-
 
 #onas4 {
     background-image: linear-gradient(
@@ -190,9 +190,10 @@ p {
     url(imgs/silnik.jpg);
 }
 
-#logoimg{
-    width: 200px;
-    height:auto;
+#logoimg {
+    width: 300px;
+    height: auto;
+    margin: 20px;
 }
 
 .slide p {
@@ -204,37 +205,39 @@ p {
 }
 
 .avatar {
-    width:300px;
+    width: 300px;
     height: 300px;
     margin: 10px;
-    border: 10px solid rgba(255,255,255,0.5);
+    border: 10px solid rgba(255, 255, 255, 0.5);
     border-radius: 500px;
     -webkit-border-radius: 500px;
     -moz-border-radius: 500px;
 }
 
-.kontakt i{
+.kontakt i {
     color: white;
 }
-.kontakt h2{
+
+.kontakt h2 {
     color: white;
     font-size: 3em;
 }
 
-.kontakt p{
+.kontakt p {
     font-size: 2em;
 }
 
 #row {
-    padding-top:30px;
-    padding-bottom:30px;
+    margin-top: 50px;
+    padding-top: 10px;
+    padding-bottom: 30px;
     background-color: #63899d;
 }
 
-.icons{
+.icons {
     margin-top: 20px;
 }
 
-.icons i{
+.icons i {
     margin: 20px;
 }

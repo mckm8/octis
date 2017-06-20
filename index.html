@@ -23,12 +23,24 @@
 
     <script type="text/javascript">
         $(document).ready(function () {
-            $('#fullpage').fullpage({
-                sectionsColor: ['#1bbc9b', '#4BBFC3', '#7BAABE', '#CCCCCC', '#ccddff'],
-                anchors: ['octis', 'oFirmie', 'kontakt', 'mleko', 'lastPage'],
-                menu: '#menu',
-                scrollingSpeed: 500
-            });
+            if (/Mobi/.test(navigator.userAgent)) {
+                $('#fullpage').fullpage({
+                    sectionsColor: ['#1bbc9b', '#4BBFC3', '#7BAABE', '#7BAABE', '#ccddff'],
+                    anchors: ['octis', 'oFirmie', 'kontakt', 'oferta', 'lastPage'],
+                    menu: '#menu',
+                    scrollingSpeed: 500,
+                    autoScrolling: false,
+                    scrollBar: false
+                });
+            } else {
+                $('#fullpage').fullpage({
+                    sectionsColor: ['#1bbc9b', '#4BBFC3', '#7BAABE', '#7BAABE', '#ccddff'],
+                    anchors: ['octis', 'oFirmie', 'kontakt', 'oferta', 'lastPage'],
+                    menu: '#menu',
+                    scrollingSpeed: 500,
+                });
+            }
+
 
         });
     </script>
@@ -42,31 +54,25 @@
             <!--<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">-->
             <!--<span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>-->
             <!--</button>-->
-            <a class="navbar-left" href="#octis"><img src="imgs/bitbucket_rgb_darkblue_atlassian_1200x630.png"
+            <a class="navbar-left" href="#octis"><img src="imgs/hy-nav-logo.png"
                                                       id="logoimg"></a>
         </div>
 
         <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav navbar-right" id="menu">
-
-                <!--<li>-->
-                <!--<a class="page-scroll" href="#services">Usługi</a>-->
-                <!--</li>-->
-                <!--<li>-->
-                <!--<a class="page-scroll" href="#portfolio">Technologie</a>-->
-                <!--</li>-->
                 <li data-menuanchor="octis">
                     <a class="page-scroll" href="#octis">Octis</a>
                 </li>
                 <li data-menuanchor="oFirmie">
                     <a class="page-scroll" href="#oFirmie">O firmie</a>
                 </li>
+                <li data-menuanchor="oferta">
+                    <a class="page-scroll" href="#oferta">Oferta</a>
+                </li>
                 <li data-menuanchor="kontakt">
                     <a class="page-scroll" href="#kontakt">Kontakt</a>
                 </li>
-                <li data-menuanchor="mleko">
-                    <a class="page-scroll" href="#mleko">mleko</a>
-                </li>
+
             </ul>
         </div>
     </div>
@@ -104,7 +110,7 @@
                 gazu LPG.
             </p>
         </div>
-        <div class="slide" id="onas2">
+        <div class="slide active" id="onas2">
             <p>
                 Oferujemy podzespoły do wyrobów medycznych - zespoły napędowe, siłowniki, przewody hydrauliczne czy
                 elementy sterujące. Wykonujemy informatyczne systemy sterujące wyrobami medycznymi, tory wizyjne, itp.
@@ -126,6 +132,10 @@
         </div>
 
     </div>
+    <div class="section ">
+        <h1>Oferta</h1>
+        <p>Lorem ipsum dolor sit amet</p>
+    </div>
     <div class="section">
             <div class="row" id="row">
                 <div class="col-xs-12 col-md-4">
@@ -139,7 +149,6 @@
                         <i class="fa fa-envelope-o fa-3x visible-md visible-lg"></i>
                         <p>zielinski@octis.pl</p>
                     </div>
-
                 </div>
                 <div class="col-xs-12 col-md-4">
                     <div class="kontakt">
@@ -174,15 +183,9 @@
                         <i class="fa fa-youtube fa-4x sr-contact"></i>
                     </div>
                 </div>
-
             </div>
-
-
     </div>
-    <div class="section ">
-        <h1>fullPage.js</h1>
-        <p>Create Beautiful Fullscreen Scrolling Websites</p>
-    </div>
+
 </div>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
         integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
