@@ -25,7 +25,6 @@
     <script type="text/javascript">
         $(document).ready(function () {
             $('body').addClass('loaded');
-            $('h1').css('color', '#222222');
 
             if (/Mobi/.test(navigator.userAgent)) {
                 $('#fullpage').fullpage({
@@ -140,19 +139,22 @@
             <p>Jesteśmy z Wami od 2009 roku.</p>
         </div>
     </div>
-    <div class="section" id="ochr">
-        <div class="slide active">
+    <div class="section">
+        <div class="slide active" id="ochr">
 
             <div class="row">
-                <div class="col-md-8">
-                    <h1>Ochrona środowiska</h1>
+                <div class="col-xs-8">
+                    <div class="ochrona_srodowiska">
+                        <h1>Ochrona środowiska</h1>
+                    </div>
+
                 </div>
 
-                <div class="col-md-4">
+                <div class="col-xs-4">
                     <ul id="menu_firmy">
                         <li>
                             <a href="#ochrona/1">
-                                <img src="imgs/jager.png" width="auto" , height="70px">
+                                <img src="imgs/jaeger.png" width="auto" , height="70px">
                             </a>
                         </li>
                         <li>
@@ -171,6 +173,18 @@
                                 <img src="imgs/mit.png" width="auto" , height="70px">
                             </a>
                         </li>
+                        <li>
+                            <a href="#ochrona/5">
+                                <img src="imgs/logo_octis.png" width="auto" , height="70px"><BR>
+                                OSONE
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#ochrona/6">
+                                <img src="imgs/logo_octis.png" width="auto" , height="70px"><BR>
+                                BALASTY
+                            </a>
+                        </li>
 
 
                     </ul>
@@ -182,11 +196,47 @@
 
             <!--</div>-->
         </div>
-        <div class="slide">
-            <h1>Dyfuzory</h1>
-            <p>
-                JAGER
-            </p>
+        <div class="slide ">
+            <div class="jager">
+                <div style="padding-top:150px">
+                    <p>
+                        Elementy napowietrzające – dyfuzory
+                        Dyfuzory talerzowe, rurowe i płytowe marki Jager stosowane są głównie w procesie oczyszczania
+                        ścieków w oczyszczalniach przydomowych, komunalnych i przemysłowych. Znajdują również
+                        zastosowanie w napowietrzaniu jezior, stawów hodowlanych i oczek wodnych. Charakteryzują się
+                        łatwością montażu, bezobsługową pracą oraz wytrzymałością. Występują w dwóch rodzajach z
+                        membraną z tworzywa EPDM oraz sylikonową.
+                    </p>
+                </div>
+                <div class="logo_octis_dol">
+                    <img src="imgs/Jaeger.png" width="350px" height="auto">
+                </div>
+
+
+                <div class="row">
+                    <div class="col-xs-4">
+                        <h2>
+                            Dyfuzory Talerzowe
+                        </h2>
+                        <img src="imgs/jager_talerzowy.png" width="100%", height="auto">
+                    </div>
+                    <div class="col-xs-4">
+                        <h2>
+                            Dyfuzory Rurowe
+                        </h2>
+                        <img src="imgs/jager_rurowy.jpg" width="100%", height="auto">
+                    </div>
+                    <div class="col-xs-4">
+                        <h2>
+                            Dyfuzory Płytowe
+                        </h2>
+                        <img src="imgs/jager_plytowy.png" width="100%", height="auto">
+
+                    </div>
+                </div>
+            </div>
+
+
         </div>
         <div class="slide">
             <h1>Dmuchawy</h1>
@@ -210,10 +260,11 @@
         </div>
 
         <div class="slide">
+            <h1>OSONE</h1>
+        </div>
+
+        <div class="slide">
             <h1>Balasty</h1>
-            <p>
-                sterownik osone
-            </p>
         </div>
     </div>
     <div class="section">
