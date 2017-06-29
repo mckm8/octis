@@ -12,8 +12,9 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
           integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">-->
-    <link rel="stylesheet" type="text/css" href="examples.css"/>
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="styles.css"/>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+          type="text/css">
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
@@ -23,29 +24,65 @@
 
     <script type="text/javascript">
         $(document).ready(function () {
+            $('body').addClass('loaded');
+            $('h1').css('color', '#222222');
+
             if (/Mobi/.test(navigator.userAgent)) {
                 $('#fullpage').fullpage({
-                    sectionsColor: ['#1bbc9b', '#4BBFC3', '#7BAABE', '#7BAABE', '#ccddff'],
-                    anchors: ['octis', 'oFirmie', 'kontakt', 'oferta', 'lastPage'],
+                    sectionsColor: ['#FFF', '#4BBFC3', '#7BAABE', '#FFF', '#FFF'],
+                    anchors: ['octis', 'ochrona', 'pneumatyka', 'kontakt', 'lastPage'],
                     menu: '#menu',
                     scrollingSpeed: 500,
                     autoScrolling: false,
-                    scrollBar: false
+                    scrollBar: false,
+                    afterLoad: function (anchorLink, index) {
+                        if (document.getElementById("main_section").classList.contains("active")) {
+                            $('#logoimg').fadeOut(150);
+                        } else {
+                            $('#logoimg').fadeIn(400);
+                        }
+                    }
                 });
             } else {
                 $('#fullpage').fullpage({
-                    sectionsColor: ['#1bbc9b', '#4BBFC3', '#7BAABE', '#7BAABE', '#ccddff'],
-                    anchors: ['octis', 'oFirmie', 'kontakt', 'oferta', 'lastPage'],
+                    sectionsColor: ['#FFF', '#4BBFC3', '#7BAABE', '#FFF', '#FFF'],
+                    anchors: ['octis', 'ochrona', 'pneumatyka', 'kontakt', 'lastPage'],
                     menu: '#menu',
                     scrollingSpeed: 500,
+                    afterLoad: function (anchorLink, index) {
+                        if (index == 2) {
+                            $('#menu_firmy').css('visibility', 'visible')
+                        }
+                        if (index == 1) {
+                            $('#logoimg').fadeOut(400);
+                        }
+                    },
+                    onLeave: function (index, nextIndex, direction) {
+                        if (index == 2) {
+                            $('#menu_firmy').css('visibility', 'hidden')
+                        }
+                        if (index == 1) {
+                            $('#logoimg').fadeIn(400);
+                        }
+                    }
+
                 });
             }
 
+//            console.log(document.getElementById("main_section").className);
 
         });
+
     </script>
 </head>
 <body>
+
+<div id="loader-wrapper">
+    <div id="loader"></div>
+    <div class="loader-section section-left"></div>
+    <div class="loader-section section-right"></div>
+</div>
+
 
 <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container-fluid">
@@ -54,7 +91,7 @@
             <!--<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">-->
             <!--<span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>-->
             <!--</button>-->
-            <a class="navbar-left" href="#octis"><img src="imgs/hy-nav-logo.png"
+            <a class="navbar-left" href="#octis"><img src="imgs/logo_octis.png"
                                                       id="logoimg"></a>
         </div>
 
@@ -63,21 +100,22 @@
                 <li data-menuanchor="octis">
                     <a class="page-scroll" href="#octis">Octis</a>
                 </li>
-                <li data-menuanchor="oFirmie">
-                    <a class="page-scroll" href="#oFirmie">O firmie</a>
+                <li data-menuanchor="ochrona">
+                    <a class="page-scroll" href="#ochrona">Ochrona środowiska</a>
                 </li>
-                <li data-menuanchor="oferta">
-                    <a class="page-scroll" href="#oferta">Oferta</a>
+                <li data-menuanchor="pneumatyka">
+                    <a class="page-scroll" href="#pneumatyka">Pneumatyka</a>
                 </li>
                 <li data-menuanchor="kontakt">
                     <a class="page-scroll" href="#kontakt">Kontakt</a>
                 </li>
 
             </ul>
+
+
         </div>
+
     </div>
-
-
     <!-- /.container-fluid -->
 </nav>
 <!--<ul id="menu">-->
@@ -89,101 +127,157 @@
 
 
 <div id="fullpage">
-    <div class="section" id="videoSection">
-        <video id="myVideo" loop muted data-autoplay>
-            <source src="imgs/Waiting-Wishing.mp4" type="video/mp4">
-            <source src="imgs/Waiting-Wishing.webm" type="video/webm">
-        </video>
-        <div class="layer">
-            <h1>OCTIS</h1>
-            <p>Wasz partner od 2009 roku</p>
+    <div class="section" id="main_section">
+        <!--id="videoSection"-->
+
+        <!--<video id="myVideo" loop muted data-autoplay>-->
+        <!--<source src="imgs/Waiting-Wishing.mp4" type="video/mp4">-->
+        <!--<source src="imgs/Waiting-Wishing.webm" type="video/webm">-->
+        <!--</video>-->
+        <div>
+            <!--class="layer"-->
+            <img src="imgs/logo_octis.png" width="50%" height="auto">
+            <p>Jesteśmy z Wami od 2009 roku.</p>
         </div>
     </div>
+    <div class="section" id="ochr">
+        <div class="slide active">
 
-    <div class="section" id="onas">
-        <div class="slide" id="onas1">
+            <div class="row">
+                <div class="col-md-8">
+                    <h1>Ochrona środowiska</h1>
+                </div>
+
+                <div class="col-md-4">
+                    <ul id="menu_firmy">
+                        <li>
+                            <a href="#ochrona/1">
+                                <img src="imgs/jager.png" width="auto" , height="70px">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#ochrona/2">
+                                <img src="imgs/hiblow.png" width="auto" , height="70px">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#ochrona/3">
+                                <img src="imgs/bigiesse.png" width="auto" , height="70px">
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#ochrona/4">
+                                <img src="imgs/mit.png" width="auto" , height="70px">
+                            </a>
+                        </li>
+
+
+                    </ul>
+
+                </div>
+            </div>
+
+            <!--<div class="collapse navbar-collapse">-->
+
+            <!--</div>-->
+        </div>
+        <div class="slide">
+            <h1>Dyfuzory</h1>
             <p>
-                Jesteśmy firmą działająca jak do tej pory głównie na rynku medycznym i ochrony środowiska, rozwijamy
-                także intensywnie kierunki rozwoju w obszarze jak najbardziej kompletnych rozwiązań z zakresu części do
-                budowy maszyn.
-                Działamy na rynku wyrobu medycznych, produktów do oczyszczalni ścieków, maszyn do kopalń i przetwórstwa
-                gazu LPG.
+                JAGER
             </p>
         </div>
-        <div class="slide active" id="onas2">
+        <div class="slide">
+            <h1>Dmuchawy</h1>
             <p>
-                Oferujemy podzespoły do wyrobów medycznych - zespoły napędowe, siłowniki, przewody hydrauliczne czy
-                elementy sterujące. Wykonujemy informatyczne systemy sterujące wyrobami medycznymi, tory wizyjne, itp.
+                HIBLOW
             </p>
         </div>
 
-        <div class="slide" id="onas3">
+        <div class="slide">
+            <h1>Dmuchawy bocznokanałowe</h1>
             <p>
-                Oferujemy osprzęt do oczyszczalni ścieków - dmuchawy, dyfuzory, pompy.
+                GIGIESSE
             </p>
         </div>
 
-        <div class="slide" id="onas4">
+        <div class="slide">
+            <h1>Wyspy zaworowe</h1>
             <p>
-                Oferujemy silniki łopatkowe i tłokowe z oprzyrządowaniem, o różnych wariantach montażu (czołowo, łapami
-                czy kołnierzowo) - posiadające ceryfikat ATEX I M2 dopuszczający do pracy w kopalniach i innych
-                obszarach szczególnie zagrożonych.
+                MIT
             </p>
         </div>
 
-    </div>
-    <div class="section ">
-        <h1>Oferta</h1>
-        <p>Lorem ipsum dolor sit amet</p>
+        <div class="slide">
+            <h1>Balasty</h1>
+            <p>
+                sterownik osone
+            </p>
+        </div>
     </div>
     <div class="section">
-            <div class="row" id="row">
-                <div class="col-xs-12 col-md-4">
-                    <div class="kontakt">
-                        <img src="imgs/face2.jpg" class="img-circle avatar">
-                        <h2>Waldemar Zieliński</h2>
-                        <h3>marketing</h3>
-                        <br><i class="fa fa-phone fa-4x visible-md visible-lg"></i>
-                        <p> 578-452-634</p>
-                        <br>
-                        <i class="fa fa-envelope-o fa-3x visible-md visible-lg"></i>
-                        <p>zielinski@octis.pl</p>
-                    </div>
-                </div>
-                <div class="col-xs-12 col-md-4">
-                    <div class="kontakt">
-                        <img src="imgs/face1.jpeg" class="img-circle avatar">
-                        <h2>Malina Jabłońska</h2>
-                        <h3>technolog</h3>
-                        <br><i class="fa fa-phone fa-4x visible-md visible-lg"></i>
-                        <p> 600-107-411</p>
-                        <br>
-                        <i class="fa fa-envelope-o fa-3x visible-md visible-lgt"></i>
-                        <p>jablonska@octis.pl</p>
-                    </div>
-                </div>
-                <div class="col-xs-12 col-md-4">
-                    <div class="kontakt">
-                        <img src="imgs/face3.jpg" class="img-circle avatar">
-                        <h2>Gustaw Borkowski</h2>
-                        <h3>serwis</h3>
-                        <br><i class="fa fa-phone fa-4x visible-md visible-lg"></i>
-                        <p> 512-011-566</p>
-                        <br>
-                        <i class="fa fa-envelope-o fa-3x visible-md visible-lg"></i>
-                        <p>borkowski@octis.pl</p>
-                    </div>
+        <div class="slide active">
+            <h1>Pneumatyka Globe</h1>
+        </div>
+
+        <div class="slide">
+            <h1>Silniki</h1>
+        </div>
+
+        <div class="slide">
+            <h1>Pozostałe produkty Globe</h1>
+        </div>
+
+    </div>
+    <div class="section">
+        <div class="row" id="row">
+            <div class="col-xs-12 col-md-4">
+                <div class="kontakt">
+                    <img src="imgs/face2.jpg" class="img-circle avatar">
+                    <h2>Waldemar Zieliński</h2>
+                    <h3>marketing</h3>
+                    <br><i class="fa fa-phone fa-4x visible-md visible-lg"></i>
+                    <p> 578-452-634</p>
+                    <br>
+                    <i class="fa fa-envelope-o fa-3x visible-md visible-lg"></i>
+                    <p>zielinski@octis.pl</p>
                 </div>
             </div>
-            <div class="row" >
-                <div class="col-xs-12 col-md-12">
-                    <div class="icons">
-                        <i class="fa fa-facebook-square fa-4x sr-contact"></i>
-                        <i class="fa fa-meetup fa-4x sr-contact"></i>
-                        <i class="fa fa-youtube fa-4x sr-contact"></i>
-                    </div>
+            <div class="col-xs-12 col-md-4">
+                <div class="kontakt">
+                    <img src="imgs/face1.jpeg" class="img-circle avatar">
+                    <h2>Malina Jabłońska</h2>
+                    <h3>technolog</h3>
+                    <br><i class="fa fa-phone fa-4x visible-md visible-lg"></i>
+                    <p> 600-107-411</p>
+                    <br>
+                    <i class="fa fa-envelope-o fa-3x visible-md visible-lg"></i>
+                    <p>jablonska@octis.pl</p>
                 </div>
             </div>
+            <div class="col-xs-12 col-md-4">
+                <div class="kontakt">
+                    <img src="imgs/face3.jpg" class="img-circle avatar">
+                    <h2>Gustaw Borkowski</h2>
+                    <h3>serwis</h3>
+                    <br><i class="fa fa-phone fa-4x visible-md visible-lg"></i>
+                    <p> 512-011-566</p>
+                    <br>
+                    <i class="fa fa-envelope-o fa-3x visible-md visible-lg"></i>
+                    <p>borkowski@octis.pl</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-md-12">
+                <div class="icons">
+                    <i class="fa fa-facebook-square fa-4x sr-contact"></i>
+                    <i class="fa fa-meetup fa-4x sr-contact"></i>
+                    <i class="fa fa-youtube fa-4x sr-contact"></i>
+                </div>
+            </div>
+        </div>
     </div>
 
 </div>
