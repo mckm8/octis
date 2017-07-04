@@ -395,7 +395,8 @@ p {
 }
 
 .kontakt i {
-    color: white;
+    color: black;
+    display: inline-block;
 }
 
 .kontakt h2 {
@@ -405,7 +406,14 @@ p {
 
 .kontakt p {
     font-size: 2em;
+    text-align: left;
+    width: 90%;
 }
+
+.kontakt a {
+    color: rgba(0, 0, 0, 0.5);
+}
+
 
 #row {
     margin-top: 50px;
@@ -420,6 +428,16 @@ p {
 
 .icons i {
     margin: 20px;
+}
+
+.row-maps {
+    height:100%;
+    position: relative;
+    margin-top:20px;
+}
+.kontakt{
+    padding-top: 120px;
+    height: 100%;
 }
 
 /* ==========================================================================
