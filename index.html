@@ -15,7 +15,7 @@
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
           type="text/css">
     <link rel="stylesheet" type="text/css" href="styles.css"/>
-
+    <link href="https://fonts.googleapis.com/css?family=Cabin+Condensed" rel="stylesheet">
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
 
@@ -48,6 +48,7 @@
                     anchors: ['octis', 'ochrona', 'pneumatyka', 'kontakt', 'lastPage'],
                     menu: '#menu',
                     scrollingSpeed: 500,
+                    scrollBar: true,
                     afterLoad: function (anchorLink, index) {
                         if (index == 2) {
                             $('#menu_firmy').css('visibility', 'visible')
@@ -91,7 +92,7 @@
             <!--<span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>-->
             <!--</button>-->
             <a class="navbar-left visible-md visible-lg" href="#octis"><img src="imgs/logo_octis.png"
-                                                      id="logoimg"></a>
+                                                                            id="logoimg"></a>
         </div>
 
         <div class="collapse navbar-collapse">
@@ -145,7 +146,7 @@
             <div class="row">
                 <div class="col-xs-8">
                     <div class="ochrona_srodowiska">
-                        <h1>Ochrona środowiska</h1>
+                        <h1 class="globe_title">Ochrona<br>środowiska</h1>
                     </div>
                 </div>
 
@@ -242,7 +243,7 @@
                         <h2>
                             Dyfuzory Rurowe
                         </h2>
-                        <div class="img_kontener">
+                        <div class="img_kontener" style="padding-bottom:100px;">
                             <img src="imgs/jager_rurowy.jpg" width="100%" , height="auto">
                             <p>
                                 Dyfuzory rurowe<br>
@@ -289,8 +290,6 @@
             </div>
         </div>
         <div class="slide">
-
-
             <div class="ochrona_kolumna hiblow">
                 <div style="padding-top:150px;">
                     <div class="kontener_tekst">
@@ -302,43 +301,45 @@
                             zależności od zapotrzebowania ich wydajność wynosi od 20 do nawet 200 litrów na minutę.
                         </p>
                     </div>
-                    <div class="row">
-                        <div class="col-xs-6">
-                            <h2>
-                                Seria Hiblow XP (energooszczędna)
-                            </h2>
-                            <div class="img_kontener">
-                                <img src="imgs/hiblow1.jpg" width="100%" , height="auto">
-                                <p>
-                                    Seria Hiblow XP (energooszczędna):<br>
-                                    Moc: 30 – 58 W <br>
-                                    Wydajność: 2,4 – 4,8 m3/h <br>
-                                    Ciśnienie maksymalne: 128 – 147 mbar
-                                </p>
-                            </div>
-                        </div>
-                        <div class="col-xs-6">
-                            <h2>
-                                Seria Hiblow HP
-                            </h2>
-                            <div class="img_kontener">
-                                <img src="imgs/hiblow2.jpg" width="100%" , height="auto">
-                                <p>
-                                    Seria Hiblow HP:<br>
-                                    Moc: 38 – 210 W<br>
-                                    Wydajność: 2,4 – 12 m3/h<br>
-                                    Ciśnienie maksymalne: 128 – 200 mbar
-                                </p>
-                            </div>
-                        </div>
-                    </div>
                 </div>
+
                 <div class="logo_octis_dol">
                     <img src="imgs/hiblow.png" width="350px" height="auto">
                 </div>
+
+                <div class="row">
+                    <div class="col-xs-4 col-md-offset-2">
+                        <h2>
+                            Seria Hiblow XP (energooszczędna)
+                        </h2>
+                        <div class="img_kontener">
+                            <img src="imgs/hiblow1.jpg" width="100%" , height="auto">
+                            <p>
+                                Seria Hiblow XP (energooszczędna):<br>
+                                Moc: 30 – 58 W <br>
+                                Wydajność: 2,4 – 4,8 m3/h <br>
+                                Ciśnienie maksymalne: 128 – 147 mbar
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-xs-4">
+                        <h2>
+                            <br>Seria Hiblow HP
+                        </h2>
+                        <div class="img_kontener">
+                            <img src="imgs/hiblow2.jpg" width="100%" , height="auto">
+                            <p>
+                                Seria Hiblow HP:<br>
+                                Moc: 38 – 210 W<br>
+                                Wydajność: 2,4 – 12 m3/h<br>
+                                Ciśnienie maksymalne: 128 – 200 mbar
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+
             </div>
-
-
         </div>
 
         <div class="slide">
@@ -368,6 +369,11 @@
                             gazu, dodatkowo charakteryzują się wysoką niezawodnością.
                         </p>
                     </div>
+
+                    <div class="logo_octis_dol">
+                        <img src="imgs/bigiesse.png" width="350px" height="auto">
+                    </div>
+
                     <div class="row">
                         <div class="col-xs-3">
                             <h2>
@@ -429,9 +435,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="logo_octis_dol">
-                    <img src="imgs/bigiesse.png" width="350px" height="auto">
-                </div>
+
             </div>
         </div>
 
@@ -453,12 +457,6 @@
                             </h2>
                             <div class="img_kontener">
                                 <img src="imgs/mit1.jpg" width="auto" , height="100%">
-                                <p>
-                                    Seria Hiblow XP (energooszczędna):<br>
-                                    Moc: 30 – 58 W <br>
-                                    Wydajność: 2,4 – 4,8 m3/h <br>
-                                    Ciśnienie maksymalne: 128 – 147 mbar
-                                </p>
                             </div>
                         </div>
                     </div>
@@ -510,7 +508,7 @@
                     </div>
                 </div>
                 <div class="logo_octis_dol">
-                    <img src="imgs/octis.png" width="350px" height="auto">
+                    <img src="imgs/logo_octis.png" width="350px" height="auto">
                 </div>
             </div>
         </div>
@@ -526,7 +524,7 @@
                         </p>
                     </div>
                     <div class="row">
-                        <div class="col-xs-6">
+                        <div class="col-xs-4 col-xs-offset-2">
                             <h2>
                                 Balasty do dyfuzorów rurowych
                             </h2>
@@ -534,7 +532,7 @@
                                 <img src="imgs/balast1.jpg" width="100%" , height="auto">
                             </div>
                         </div>
-                        <div class="col-xs-6">
+                        <div class="col-xs-4">
                             <h2>
                                 Balasty do dyfuzorów talerzowych
                             </h2>
@@ -554,14 +552,18 @@
         <div class="slide active pneumatyka">
             <div class="row">
                 <div class="col-xs-8">
-                    <h1>Pneumatyka GLOBE</h1>
+                    <h1 class="globe_title">
+                        <a href="#pneumatyka/1">Pneumatyka<br>GLOBE</a>
+                    </h1>
                 </div>
                 <div class="col-xs-4">
-                    <img src="imgs/globe.png" width="400px" , height="auto" style="margin-top:-70px">
+                    <a href="#pneumatyka/1">
+                        <img src="imgs/globe.png" width="400px" , height="auto" >
+                    </a>
                 </div>
             </div>
 
-            <div class="slide">
+            <div class="slide pneumatyka_silniki">
                 <div class="ochrona_kolumna">
                     <div style="padding-top:150px;">
                         <div class="kontener_tekst">
@@ -680,9 +682,9 @@
         </div>
     </div>
     <div class="section">
-        <div  class="kontakt">
+        <div class="kontakt">
             <h1>Kontakt</h1>
-            <div class="row" >
+            <div class="row">
                 <div class="col-xs-12 col-md-6">
                     <div>
                         <p style="display: block; text-align: right;">
@@ -694,7 +696,7 @@
                             <i class="fa fa-phone fa-1x "></i>
                             668 079 650<br>
                             <i class="fa fa-envelope-o fa-1x"></i>
-                            <a href="mailto:katarzyna.pierkal@octis.pl">katarzyna.pierkal@octis.pl</a>
+                            <a href="mailto:katarzyna.pierlak@octis.pl">katarzyna.pierlak@octis.pl</a>
                         </p>
 
                         <!--<img src="imgs/face2.jpg" class="img-circle avatar">-->
@@ -725,7 +727,9 @@
                 </div>
             </div>
             <div class="row-maps">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2581.2530157935153!2d19.178989315703895!3d49.6872079793774!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x471426398b4bb405%3A0x73fed793e3c79a82!2sKabaty+1%2C+34-300+%C5%BBywiec!5e0!3m2!1sen!2spl!4v1499175299799" width="100%" height="100%" frameborder="0" style="border:0" allowfullscreen></iframe>            </div>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2581.2530157935153!2d19.178989315703895!3d49.6872079793774!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x471426398b4bb405%3A0x73fed793e3c79a82!2sKabaty+1%2C+34-300+%C5%BBywiec!5e0!3m2!1sen!2spl!4v1499175299799"
+                        width="100%" height="100%" frameborder="0" style="border:0" allowfullscreen></iframe>
+            </div>
         </div>
     </div>
 
